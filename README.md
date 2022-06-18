@@ -14,7 +14,7 @@ I finished next.js tutorials for beginners (Youtube: Codevolution Next.js series
 And I wanted to try create something. (But I didn't have a confidence for creating fullstack application).
 So, I tried to challenge this project.
 
-Now, I have a little bit confidence and I am going to create todo app by my own.
+Now, I have a little bit confidence and I am going to create todo app on my own.
 
 ## Features
 
