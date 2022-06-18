@@ -17,7 +17,7 @@ const CreateTask = () => {
 
 	const getTask = useCallback(async () => {
 		const response = await fetch(
-			`http://localhost:3000/api/tasks/${query.id}`
+			`/api/tasks/${query.id}`
 		);
 		const {task} = await response.json();
 		setNewTask({ title: task.title, description: task.description });
@@ -48,7 +48,7 @@ const CreateTask = () => {
 
 	const createTask = async () => {
 		try {
-			await fetch(`http://localhost:3000/api/tasks`, {
+			await fetch(`/api/tasks`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ const CreateTask = () => {
 
 	const updateTask = async () => {
 		try {
-			await fetch(`http://localhost:3000/api/tasks/${query.id}`, {
+			await fetch(`/api/tasks/${query.id}`, {
 				method: 'PUT',
 				headers: {
 					'Content-Type': 'application/json',

@@ -14,7 +14,7 @@ const Task = ({ task: { task }, error }) => {
 	const deleteTask = async () => {
 		const { id } = query;
 		try {
-			await fetch(`http://localhost:3000/api/tasks/${id}`, {
+			await fetch(`/api/tasks/${id}`, {
 				method: 'DELETE',
 				headers: {
 					'Content-Type': 'application/json',
@@ -74,7 +74,7 @@ export default Task;
 
 export async function getServerSideProps({ query: { id } }) {
 	const response = await fetch(
-		`http://localhost:3000/api/tasks/${id}`
+		`/api/tasks/${id}`
 	);
 	if (response.status === 200) {
 		const task = await response.json();
