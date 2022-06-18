@@ -14,12 +14,15 @@ const Task = ({ task: { task }, error }) => {
 	const deleteTask = async () => {
 		const { id } = query;
 		try {
-			await fetch(`/api/tasks/${id}`, {
-				method: 'DELETE',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-			});
+			await fetch(
+				`https://my-first-next-js-todo-65tqj4vy0-hiros-dev.vercel.app/api/tasks/${id}`,
+				{
+					method: 'DELETE',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+				}
+			);
 		} catch (error) {
 			console.log(error.message);
 		}
@@ -74,7 +77,7 @@ export default Task;
 
 export async function getServerSideProps({ query: { id } }) {
 	const response = await fetch(
-		`/api/tasks/${id}`
+		`https://my-first-next-js-todo-65tqj4vy0-hiros-dev.vercel.app/api/tasks/${id}`
 	);
 	if (response.status === 200) {
 		const task = await response.json();

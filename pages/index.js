@@ -68,7 +68,9 @@ export default function Home({ tasks: { tasks } }) {
 }
 
 export async function getServerSideProps() {
-	const response = await fetch(`/api/tasks`);
+	const response = await fetch(
+		`https://my-first-next-js-todo-65tqj4vy0-hiros-dev.vercel.app/api/tasks`
+	);
 	const tasks = await response.json();
 
 	return {

@@ -17,7 +17,7 @@ const CreateTask = () => {
 
 	const getTask = useCallback(async () => {
 		const response = await fetch(
-			`/api/tasks/${query.id}`
+			`https://my-first-next-js-todo-65tqj4vy0-hiros-dev.vercel.app/api/tasks/${query.id}`
 		);
 		const {task} = await response.json();
 		setNewTask({ title: task.title, description: task.description });
@@ -48,13 +48,16 @@ const CreateTask = () => {
 
 	const createTask = async () => {
 		try {
-			await fetch(`/api/tasks`, {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(newTask),
-			});
+			await fetch(
+				`https://my-first-next-js-todo-65tqj4vy0-hiros-dev.vercel.app/api/tasks`,
+				{
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify(newTask),
+				}
+			);
 		} catch (error) {
 			console.log(error.message);
 		}
@@ -62,13 +65,16 @@ const CreateTask = () => {
 
 	const updateTask = async () => {
 		try {
-			await fetch(`/api/tasks/${query.id}`, {
-				method: 'PUT',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(newTask),
-			});
+			await fetch(
+				`https://my-first-next-js-todo-65tqj4vy0-hiros-dev.vercel.app/api/tasks/${query.id}`,
+				{
+					method: 'PUT',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify(newTask),
+				}
+			);
 		} catch (error) {
 			console.log(error.message);
 		}
